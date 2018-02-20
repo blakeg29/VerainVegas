@@ -7,7 +7,6 @@ public class TestClass {
 	
 	public static void main(String[] args) {
 	
-		int[] playsSlotOne = new int [31];
 		int quarters = 0;
 		int choice = 0;
 		int count = 0;
@@ -35,8 +34,9 @@ public class TestClass {
 			
 			switch(choice) {
 			case 1:
-				countSlotOne(playsSlotOne);
-				quarters = slot1(quarters, count);
+		
+				quarters = slot1(quarters);
+				
 				break;
 				
 			case 2:
@@ -84,37 +84,35 @@ public class TestClass {
 	}
 	
 	
-	public static int slot1(int quarters, int counts) {
+	public static int slot1(int quarters) {
 		int []plays = new int [31];
 		int quartersOut = 25;
-		counts++;
+		int nothing = 0;
+	
+		for (int i = 0; i < plays.length; i++) {
+			if(plays[i] == 31) {
 		
-		if(plays[counts] == 31) {
+				quarters += quartersOut;
+				System.out.println("you won 25 quarters");
 		
-		quarters += quartersOut;
-		System.out.println("you won 25 quarters");
-		
-		} else if (plays[counts] < 31) {
-		
-		quarters--;
+			} else if (plays[i] < 31) {
+				quarters--;
 		}
 		
+			return quarters;
+		}
+		
+		return nothing;
+	
+		
+	}	
+		
+
+		
+		
+		
 		
 	
-		return quarters;
-	}
 	
-	public static int(int[] playsSlotOne){
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		return playsSlotOne[];
-	}
 
 }
